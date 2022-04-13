@@ -5,25 +5,14 @@ class ChildComponent extends react.Component {
     firstName: "",
     lastName: "",
   };
-  handleOnChangleFirstname = (event) => {
-    this.setState({
-      firstName: event.target.value,
-    });
-  };
-  handleOnChangleLastname = (event) => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-  handleOnclick = () => {
-    alert("hello");
-    console.log(this.state);
-  };
+  
 
   render() {
+      console.log('>>> check props :',this.props);
+      let {name, age} =this.props
     return (
       <>
-        <div> child Component : {this.props.name}</div>
+        <div> child Component : {name}---{age}</div>
       </>
     );
   }

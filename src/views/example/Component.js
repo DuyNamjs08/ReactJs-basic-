@@ -47,9 +47,10 @@ class Component extends react.Component {
               click me !
             </button>
           </div>
-          <ChildComponent name={"child one"} />
-          <ChildComponent name={"child two"} />
-          <ChildComponent name={"child three"} />
+          <ChildComponent
+           name={"Duy Nam"}
+           age={'23'} />
+          
         </div>
       </>
     );
