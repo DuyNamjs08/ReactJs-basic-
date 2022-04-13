@@ -5,6 +5,12 @@ class Component extends react.Component {
   state = {
     firstName: "",
     lastName: "",
+    arrJobs :[
+        {id:'job1',title:'php',salary:'2000'},
+        {id:'job2',title:'javascript',salary:'2500'},
+        {id:'job3',title:'nodejs',salary:'3000'}
+        
+    ]
   };
   handleOnChangleFirstname = (event) => {
     this.setState({
@@ -47,10 +53,8 @@ class Component extends react.Component {
               click me !
             </button>
           </div>
-          <ChildComponent
-           name={"Duy Nam"}
-           age={'23'} />
-          
+          <ChildComponent 
+          arrJobs={this.state.arrJobs} />
         </div>
       </>
     );
