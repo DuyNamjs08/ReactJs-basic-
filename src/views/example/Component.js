@@ -1,4 +1,5 @@
 import react from "react";
+import ChildComponent from "./ChildComponent";
 
 class Component extends react.Component {
   state = {
@@ -46,6 +47,9 @@ class Component extends react.Component {
               click me !
             </button>
           </div>
+          <ChildComponent name={"child one"} />
+          <ChildComponent name={"child two"} />
+          <ChildComponent name={"child three"} />
         </div>
       </>
     );
