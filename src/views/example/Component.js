@@ -22,8 +22,9 @@ class Component extends react.Component {
       lastName: event.target.value,
     });
   };
-  handleOnclick = () => {
+  handleOnclick = (event) => {
     alert("hello");
+     event.preventDefault();
     console.log(this.state);
   };
 

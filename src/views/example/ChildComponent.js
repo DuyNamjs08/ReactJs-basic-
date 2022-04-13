@@ -2,26 +2,40 @@ import react from "react";
 
 class ChildComponent extends react.Component {
   state = {
-    firstName: "",
-    lastName: "",
+    showHide: false,
   };
-  
+  handleOnclick = () => {
+    this.setState({
+      showHide: !this.state.showHide,
+    });
+  };
 
   render() {
-      console.log('>>> check props :',this.props);
-      let { arrJobs } = this.props;
+    let { arrJobs } = this.props;
+    let showHide = this.state.showHide;
     return (
       <>
-        <div className="job-Lists">
-            {arrJobs.map((item, index)=>{
-                 return(
-                     <div className="listJob-iteam" key={item.id}>
-                         {item.title}---{item.salary}
-                     </div>
-                 )
-            })
-            }
+        {showHide === false ? (
+          <div>
+            <button onClick={() => this.handleOnclick()}>Show</button>
+          </div>
+        ) : (
+          <>
+            <div>
+              {arrJobs.map((item, index) => {
+                return (
+                  <div className="item-list" key={item.id}>
+                    {item.title} ---{item.salary}
+                  </div>
+                );
+              })}
             </div>
+
+            <div>
+              <button onClick={() => this.handleOnclick()}>Hide</button>
+            </div>
+          </>
+        )}
       </>
     );
   }
