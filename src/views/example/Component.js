@@ -1,6 +1,8 @@
 import react from "react";
 import ChildComponent from "./ChildComponent";
 import AddComponent from "./AddComponent";
+import { toast } from "react-toastify";
+
 
 class Component extends react.Component {
   state = {
@@ -15,6 +17,8 @@ class Component extends react.Component {
       this.setState({
         arrJobs: [...this.state.arrJobs,job]
       });
+    toast.success("wow so easy !");
+
   }
   DeleteAjob=(job)=>{
       let currentJob=this.state.arrJobs

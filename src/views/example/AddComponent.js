@@ -1,4 +1,6 @@
 import react from 'react'
+ import { toast } from "react-toastify";
+
 
 class AddComponent extends react.Component {
   state = {
@@ -18,7 +20,7 @@ class AddComponent extends react.Component {
   handleOnclick = (event) => {
     event.preventDefault();
     if( !this.state.title && !this.state.salary){
-        alert('missing value')
+         toast.error("miss messeage");
         return
     }
 
@@ -27,6 +29,7 @@ class AddComponent extends react.Component {
       title: this.state.title,
       salary:this.state.salary
     });
+
     this.setState({
       title:'',
       salary:''
